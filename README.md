@@ -27,3 +27,5 @@ Build script produces `./dist/200.hmtl` which is about ~87kb with inlined JS and
  - `pushState` used so you can send direct url to the color you use
  - Favicon changes according to the color
  - No Flash is used to copy to clipboard
+
+Components are written with **pug** and **stylus**
