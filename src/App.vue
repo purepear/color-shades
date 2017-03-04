@@ -58,9 +58,9 @@ export default {
   data () {
     return {
       colorString: defaultColor.toHexString(),
-      selectedColor: false,
-      hoverColor: false,
-      copyColor: false,
+      selectedColor: null,
+      hoverColor: null,
+      copyColor: null,
       percent: 3.333,
       formats: ['Hex', 'Rgb', 'PercentageRgb', 'Hsl', 'Hsv'],
       format: 'Hex',
