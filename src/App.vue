@@ -1,6 +1,6 @@
 <template lang="pug">
 #app
-  .left-panel(v-if="isValid")
+  .left-panel(v-if="isValidColor")
     h2 Base color
     .color-format(v-for="f in formats", @click="copyToClipboard(baseColor, f)")
       span {{ formatColor(baseColor, f) }}
@@ -16,7 +16,7 @@
       type="text",
       placeholder="Enter color",
       v-model="colorString",
-      :class="{invalid: !isValid}",
+      :class="{invalid: !isValidColor}",
       @click="$event.target.select()"
       )
 
@@ -105,7 +105,7 @@ export default {
     baseIndex () {
       return this.lightColors.length
     },
-    isValid () {
+    isValidColor () {
       return this.baseColor.isValid()
     },
   },
