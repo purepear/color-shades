@@ -10,16 +10,35 @@
     .color-format(v-for="f in formats", @click="copyToClipboard(selectedColor, f)")
       small copy
       span {{ formatColor(selectedColor, f) }}
+
   .color-input
-    input(type="text", v-model="colorString", :class="{invalid: !isValid}", @click="$event.target.select()", placeholder="Enter color")
-  colors(:base-index="baseIndex", :colors="allColors", @select="onSelectColor", @hover="hoverColor = $event")
-  comparator(v-if="hoverColor", :base-color="baseColor", :hover-color="hoverColor")
-  copy-message(v-if="copyText", :color="copyColor", :text="copyText")
+    input(
+      type="text",
+      placeholder="Enter color",
+      v-model="colorString",
+      :class="{invalid: !isValid}",
+      @click="$event.target.select()"
+      )
+
+  colors(
+    :base-index="baseIndex",
+    :colors="allColors",
+    @select="onSelectColor",
+    @hover="hoverColor = $event"
+    )
+  comparator(
+    v-if="hoverColor",
+    :base-color="baseColor",
+    :hover-color="hoverColor"
+    )
+  copy-message(
+    v-if="copyText",
+    :color="copyColor",
+    :text="copyText"
+    )
 
   .copyright This is a Vue2 clone of <a href="http://www.0to255.com">www.0to255.com</a>
-  .github
-    a(href="https://github.com/purepear/color-shades") Github
-
+  .github <a href="https://github.com/purepear/color-shades">Github</a>
 </template>
 
 <script>
