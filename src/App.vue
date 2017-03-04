@@ -27,7 +27,7 @@
     @hover="hoverColor = $event"
     )
   comparator(
-    v-if="hoverColor",
+    v-show="hoverColor",
     :base-color="baseColor",
     :hover-color="hoverColor"
     )
