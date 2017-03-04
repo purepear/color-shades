@@ -17,7 +17,7 @@ npm run dev
 npm run build
 ```
 
-Build script produces `./dist/200.hmtl` which is about ~87kb with inlined JS and CSS. It works offline too. Meaning you can download `dist/200.hmtl` and open it in browser.
+Build script produces `./dist/200.hmtl` which is about ~85kb(30kb gzipped) with inlined JS and CSS. It works offline too. Meaning you can download `dist/200.hmtl` and open it in browser.
 
 
 [surge.sh](https://surge.sh/help/adding-a-200-page-for-client-side-routing) needs `200.html` so it can work with pushState. Hence the filename.
