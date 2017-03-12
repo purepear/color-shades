@@ -1,14 +1,18 @@
 <template lang="pug">
 .comparator
   span Click to copy
-  div(:style="{backgroundColor: hoverColor.toHexString(), borderRadius: '7px 7px 0 0'}")
-  div(:style="{backgroundColor: baseColor.toHexString(), borderRadius: '0 0 7px 7px'}")
+  div(:style="{backgroundColor: hoverColorString, borderRadius: '7px 7px 0 0'}")
+  div(:style="{backgroundColor: baseColorString, borderRadius: '0 0 7px 7px'}")
 </template>
 
 <script>
 export default {
   name: 'comparator',
   props: ['baseColor', 'hoverColor'],
+  computed: {
+    hoverColorString() { return this.hoverColor ? this.hoverColor.toHexString() : '#000'},
+    baseColorString() { return this.baseColor ? this.baseColor.toHexString() : '#000'}
+  },
   methods: {
     mouseMove (e) {
       this.$el.style.left = (e.clientX + 15) + 'px'
