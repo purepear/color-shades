@@ -19,6 +19,7 @@
       :class="{invalid: !isValidColor}",
       @click="$event.target.select()"
       )
+    button(@click="generateRandom") Random
 
   colors(
     :base-index="baseIndex",
@@ -125,6 +126,12 @@ export default {
         this.copyText = ''
       }, 2000)
       copy(this.copyText)
+    },
+    generateRandom () {
+      this.colorString = tc.random().toHexString()
+      this.selectedColor = null
+      this.hoverColor = null
+      this.copyColor = null
     }
   },
   components: {
@@ -191,6 +198,19 @@ input[type="text"]
   position fixed
   top 50%
   left 30px
+  input
+    width 130px
+  button
+    cursor pointer
+    background-color #fff
+    border .1rem solid #ccc
+    border-radius .4rem
+    box-shadow none
+    height 3.4rem
+    padding .6rem 1.0rem // The .6rem vertically centers text on FF, ignored by Webkit
+    font-size 1.4rem
+    margin-left 1rem
+
 .copyright
   position fixed
   bottom 10px
